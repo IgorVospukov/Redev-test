@@ -1,38 +1,36 @@
 import styles from './Card.module.scss';
-import React, { useState, useEffect } from 'react';
-
-export const AppContext = React.createContext({});
+import React, { useEffect, useContext } from 'react';
+import { AppContext } from '../../App';
 
 function Card({ id, title, price, imgUrl, onPlus }) {
-  const [isAdded, setisAdded] = useState(false);
-
+  const { isItemAdded } = useContext(AppContext);
+  console.log(isItemAdded, 'hjkkjkk');
   const onClickPlus = () => {
     onPlus({ id, title, price, imgUrl });
-    setisAdded(!isAdded);
   };
-  useEffect(() => console.log('changed'), [isAdded]);
+
+  useEffect(() => console.log('changed'));
+  
   return (
-    <AppContext.Provider value={(isAdded, setisAdded)}>
-      <div className={styles.card}>
-        <img src={imgUrl} alt='' />
-        <div className='cardBottom'>
-          <h5>{title}</h5>
-          <div className='forPrice'>
-            <span>
-              Our price is <b>{price}</b>
-            </span>
-            <button className='button' onClick={onClickPlus}>
-              <img
-                width={11}
-                height={11}
-                src={isAdded ? '/img/done.png' : '/img/plus.png'}
-                alt=''
-              />
-            </button>
-          </div>
+    <div className={styles.card}>
+      <img className={styles.cartImg} src={imgUrl} alt='' />
+      <div className={styles.cartBottom}>
+        <h5>{title}</h5>
+        <div className={styles.forPrice}>
+          <span>
+            Our price is <b>{price}</b>
+          </span>
+          <button onClick={onClickPlus}>
+            <img
+              width={22}
+              height={22}
+              src={isItemAdded(id) ? '/img/done.png' : '/img/plus.png'}
+              alt='img'
+            />
+          </button>
         </div>
       </div>
-    </AppContext.Provider>
+    </div>
   );
 }
 export default Card;

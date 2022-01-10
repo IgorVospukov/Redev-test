@@ -1,0 +1,158 @@
+.dFlex {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-bottom: 1px solid #ced4da;
+}
+.headerLeft,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+.headerInfo {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  font-size: 25px;
+  padding-left:10px;
+  font-weight:bold;
+  h1,
+  p {
+    margin: 0;
+  }
+}
+.headerRight {
+  li {
+    margin-right: 30px;
+    cursor: pointer;
+  }
+}
+.emptyCart{
+  width: 100%;
+  height:100%;
+  display: grid;
+  place-items: center;
+}
+.cartItem {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  // align-items: center;
+  // width: 100%;
+  // min-height: 150px;
+  border: 1px solid none;
+  background-color: #EAEDF6;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  // max-width: 235px;
+  
+  p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 10px;
+  }
+  b {
+    font-size: 12px;
+  }
+  button {
+    width: 21px;
+    height: 21px;
+  }
+  // align-self: flex-start;
+}
+.cartImg {
+  width: 100%;
+  border: 1px solid none;
+  border-radius: 10px 10px 0 0;
+  justify-self: center;
+
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 1fr;
+  // min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  justify-self: center;
+}
+.cartBottom {
+  display: grid;
+  height: 60px;
+
+  grid-template-rows: 1fr,50px;
+  font-family: Roboto, sans-serif;
+  // padding: 10px;
+  // justify-content: flex-start;
+  p{
+    margin: 5px;
+   
+  }
+}
+.cartTotalBlock {
+  display: grid;
+  grid-template-columns: 1fr;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  align-self: flex-end;
+}
+
+.greenButton {
+  width: 150px;
+  height: 50px;
+  background-color: seagreen;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-self: center;
+  cursor: pointer;
+}
+
+.crossButton {
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+.mainButton {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 321px) {
+  .dFlex {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50px, 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ced4da;
+  }
+  .headerInfo {
+    display: none;
+  }
+  .headerLeft{
+    display: inline-block;
+    img{
+      align-self: center;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .headerRight{
+    justify-self:center;
+  }
+  .BasicDrawer{
+    width: 200px;
+  }
+}

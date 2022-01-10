@@ -1,16 +1,48 @@
 .card {
-  border: 1px solid gold;
+  border: 1px solid none;
+  background-color: #fafbff;
+  border-radius: 10px;
   max-width: 360px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  transition: box-shadow 0.2s easy-in-out;
-  transform: 0.2s easy-in-out;
+  position: relative;
   &:hover {
-    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.45);
-    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px #839bb1;
   }
   button {
     cursor: pointer;
+  }
+  cursor: pointer;
+}
+.cartImg {
+  width: 100%;
+  border: 1px solid none;
+  border-radius: 10px 10px 0 0;
+}
+.forPrice {
+  display: flex;
+  justify-content: space-between;
+  span {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+  }
+  img{
+    width: 100%;
+  }
+  button {
+    border:none;
+    background: none;
+  }
+}
+
+.cartBottom {
+  display: grid;
+  font-family: Roboto, sans-serif;
+  font-weight: 14px;
+  padding: 10px;
+  align-items: flex-end;
+  p{
+    margin: 5px;
   }
 }

@@ -1,0 +1,72 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.searchBlockFlex {
+  // display: flex;
+  align-items: center;
+  padding: 15px;
+  // justify-content: space-between;
+
+  display: grid;
+  grid-template-columns: 100px, auto;
+  h1 {
+    grid-column: 1/2;
+    margin: 0;
+  }
+}
+.searchBlock {
+  max-width: 210px;
+  height: auto;
+  grid-column: 2/3;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0 10px 0px 20px;
+  justify-self: flex-end;
+  display: flex;
+  grid-template-rows: 1fr;
+  justify-content: flex-end;
+img{
+  align-self: center;
+}
+  input {
+    border: 0;
+    font-size: 16px;
+    max-width: 150px;
+    padding-left: 10px;
+    margin-left: 20px;
+  }
+}
+.content {
+  // display: flex;
+  justify-content: space-around;
+  // flex-wrap: wrap;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-rows: auto;
+  padding: 20px;
+}
+@media screen and (max-width: 321px) {
+  .content {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 20px;
+  }
+  .searchBlockFlex {
+    display: grid;
+    grid-template-columns: repeat(1fr,minmax(50px),auto);
+  }
+  .searchBlock{
+    
+    justify-self: center;
+  }
+  .nameCard {
+    font-size: 0;
+  }
+  // .searchBlock {
+  //   display: none;
+  // }
+}
