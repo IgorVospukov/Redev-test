@@ -6,9 +6,11 @@ import { AppContext } from '../../App';
 import { CloseOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
-function Header({ onClickCart }) {
+function Header() {
   const navigate=useNavigate();
-  const { cartItems:items=[],onRemovetoCart} = useContext(AppContext);
+  const { cartItems:items=[],onRemovetoCart } = useContext(AppContext);
+  const totalPrice = items.reduce((sum,obj)=>sum + parseInt(obj.price),0)
+  
   useEffect(() => console.log('cartopened'));
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
@@ -23,14 +25,14 @@ function Header({ onClickCart }) {
   }
 
   return (
-    <header className={styles.dFlex}>
+    <header id="anchor" className={styles.dFlex}>
       <div className={styles.headerLeft}>
         <img src={'/img/video-camera.png'} width={70} height={70} alt="log" />
-        <span className={styles.headerInfo}>React Movies</span>
       </div>
+      <h1 className={styles.headerInfo}>React Movies</h1>
       <ul className={styles.headerRight}>
         <li onClick={showDrawer}>
-          <ShoppingCartOutlined
+          <ShoppingCartOutlined 
             style={{ fontSize: '32px', color: '#839BB1' }}
             onClick={showDrawer}
           />
@@ -40,7 +42,7 @@ function Header({ onClickCart }) {
         </li>
       </ul>
       <>
-      <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible} width={300} >
+      <Drawer  title="My movies" placement="right" onClose={onClose} visible={visible} width={320} >
       {items.length > 0 ? (
           <>
             <div className={styles.items}>
@@ -56,20 +58,11 @@ function Header({ onClickCart }) {
                 </div>
               ))}
             </div>
-            <div className={styles.cartTotalBlock}>
-              <ul>
-                <li className=''>
-                  <span>Sum</span>
-                  <b>1200$</b>
-                </li>
-              </ul>
-  
-              <button className={styles.greenButton} >Click me</button>
-
+            <div className={styles.cartTotalBlock}>          
+              <button className={styles.greenButton}><span>Buy now {`${totalPrice}$`}</span></button>
             </div>
           </>
         ) : (<div className={styles.emptyCart}>
-
           <img src={'/img/delete.png'} width={70} alt="img"></img>
         </div>
         )}

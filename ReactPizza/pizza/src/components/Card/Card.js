@@ -4,7 +4,6 @@ import { AppContext } from '../../App';
 
 function Card({ id, title, price, imgUrl, onPlus }) {
   const { isItemAdded } = useContext(AppContext);
-  console.log(isItemAdded, 'hjkkjkk');
   const onClickPlus = () => {
     onPlus({ id, title, price, imgUrl });
   };
@@ -13,7 +12,7 @@ function Card({ id, title, price, imgUrl, onPlus }) {
   
   return (
     <div className={styles.card}>
-      <img className={styles.cartImg} src={imgUrl} alt='' />
+      <img className={styles.cartImg} src={imgUrl} alt='img' />
       <div className={styles.cartBottom}>
         <h5>{title}</h5>
         <div className={styles.forPrice}>

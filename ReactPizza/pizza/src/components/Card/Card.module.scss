@@ -13,15 +13,17 @@
   button {
     cursor: pointer;
   }
-  cursor: pointer;
 }
+
 .cartImg {
   width: 100%;
   border: 1px solid none;
   border-radius: 10px 10px 0 0;
 }
+
 .forPrice {
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   span {
     font-family: Roboto, sans-serif;
@@ -39,10 +41,16 @@
 .cartBottom {
   display: grid;
   font-family: Roboto, sans-serif;
-  font-weight: 14px;
+  font-size: 14px;
   padding: 10px;
   align-items: flex-end;
   p{
     margin: 5px;
+  }
+  h5 {
+    font-weight: bold;
+  }
+  b{
+    color: rgba(255, 0, 0, 0.712);
   }
 }

@@ -1,86 +1,86 @@
 .login {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.637);
+  background-color: #100e19cb;
  
-  z-index: 2;
-
   form {
     grid-column: 2/3;
-
     justify-self: center;
     width: 300px;
     height: 50vh;
     display: grid;
-    // border: 2px solid black;
-    // border-radius: 10px;
-    // gap: 10px;
     padding: 10px;
     align-self: center;
     grid-template-columns: 1fr;
     button{
       cursor: pointer;
     }
+    img {
+      justify-self: center;
+    }
   }
-  form > img {
-    justify-self: center;
-  }
-  button {
-    // grid-column: 1/2;
-    // grid-row: 5/6;
 
+  button {
     background-color: #0d6efd;
     border-color: #0d6efd;
     border: 1px solid transparent;
     border-radius: 0.3rem;
-
     text-align: center;
     font-weight: bold;
     color: #fff;
     height: 50px;
-    // align-self: flex-end;
   }
 }
-.mail {
-  // grid-column: 1/2;
-  // grid-row: 2/3;
-  font-size: 1rem;
-  font-weight: 400;
 
-  color: #212529;
+.mail {
+  font-size: 1rem;
+  outline: none;
   background-color: #fff;
-  background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.5rem 0.5rem 0 0;
   text-align: center;
   align-self: flex-end;
   height: 50px;
+}
 
-  // align-self: flex-end;
-}
-.mail:focus {
-  border: 1px soid blue;
-  box-shadow: 1px 1px 2px 0 blue;
-}
 .pass {
-  // grid-column: 1/2;
-  // grid-row: 3/4;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
+  outline: none;
   background-color: #fff;
-  background-clip: padding-box;
   border: 1px solid #ced4da;
   border-top: none;
   border-radius: 0 0 0.5rem 0.5rem;
   height: 50px;
   text-align: center;
   align-self: flex-start;
-  // align-self: flex-end;
+}
+
+.forMail {
+  position: absolute ;
+  margin: auto;
+  top: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: red;
+  box-sizing: border-box;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.forPassword {
+  position: absolute ;
+  margin: auto;
+  top: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: red;
+  height: 50px;
+  font-family: sans-serif;
+  font-size: 18px;
 }

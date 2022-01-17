@@ -2,71 +2,87 @@
   display: grid;
   grid-template-columns: 1fr;
 }
+
 .searchBlockFlex {
-  // display: flex;
   align-items: center;
   padding: 15px;
-  // justify-content: space-between;
-
   display: grid;
   grid-template-columns: 100px, auto;
-  h1 {
-    grid-column: 1/2;
-    margin: 0;
-  }
 }
+
+.nameCard{
+  grid-column: 1/2;
+  color: white;
+  margin: 0;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
 .searchBlock {
   max-width: 210px;
   height: auto;
   grid-column: 2/3;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.316);
   border-radius: 5px;
-  padding: 0 10px 0px 20px;
+  padding: 0 0 0px 10px;
   justify-self: flex-end;
   display: flex;
-  grid-template-rows: 1fr;
   justify-content: flex-end;
-img{
-  align-self: center;
-}
+  box-sizing: border-box;
+  img{
+    width: 100%;
+    align-self: center;
+  }
   input {
     border: 0;
-    font-size: 16px;
+    font-size: 14px;
     max-width: 150px;
     padding-left: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
+    background: none;
+    outline: none;
+    color: white;
   }
 }
+
 .content {
-  // display: flex;
-  justify-content: space-around;
-  // flex-wrap: wrap;
   display: grid;
-  gap: 15px;
+  // justify-content: center;
+  gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   grid-template-rows: auto;
-  padding: 20px;
+  padding: 10px 10px 10px 10px;
 }
-@media screen and (max-width: 321px) {
-  .content {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    padding: 20px;
+
+.toHome{
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(128, 128, 128, 0.507);
+  border-radius: 50%;
+  position: fixed;
+  top: 85%;
+  left: 93%;
+}
+
+.forCarousel{
+ max-width: 80vw;
+ padding: auto;
+ justify-self: center;
+}
+
+.mainPic1, .mainPic2, .mainPic3, .mainPic4 {
+  width: 80vw;
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .toHome{
+    position: fixed;
+    top: 85%;
+    left: 85%;
   }
-  .searchBlockFlex {
-    display: grid;
-    grid-template-columns: repeat(1fr,minmax(50px),auto);
-  }
-  .searchBlock{
-    
-    justify-self: center;
-  }
-  .nameCard {
-    font-size: 0;
-  }
-  // .searchBlock {
-  //   display: none;
-  // }
 }

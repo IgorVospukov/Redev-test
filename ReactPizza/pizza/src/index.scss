@@ -1,25 +1,22 @@
-// @import '../../node_modules/antd/dist/antd.css';
 * {
   list-style-type: none;
 }
 
 body {
   width: 100%;
-  height: 100vh;
-  background-color: #eaedf6;
   margin: 0;
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
 }
+
 button,
 input {
   font-family: Roboto, sans-serif;
 }
 
 .App {
-  display: grid;
-  grid-template-columns: 1fr;
-  // grid-template-rows: auto;
   width: 100%;
+  min-height: 100vh;
+  background-color: #100e19;
 }
